@@ -1,0 +1,108 @@
+body {
+    background-color: #ffccff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeIn 1s ease-in;
+}
+
+.one {
+    background-color: whitesmoke;
+    height: auto; /* Changed to auto for better responsiveness */
+    width: 90%; /* Set width to a percentage */
+    max-width: 600px; /* Set a maximum width for larger screens */
+    margin-top: 50px; /* Reduced margin for smaller screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out;
+}
+
+.two {
+    padding: 20px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.7s forwards;
+    animation-delay: 0.3s;
+}
+
+.love-message {
+    padding: 16px;
+    color: rgb(153, 25, 162);
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+.love-button {
+    background-color: rgb(153, 25, 162);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%; /* Make button full-width on small screens */
+}
+
+.love-button:hover {
+    background-color: rgba(153, 25, 162, 0.8);
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .love-message {
+        font-size: 1em; /* Smaller font size for mobile */
+    }
+    
+    .love-button {
+        font-size: 1em; /* Smaller font size for button */
+        padding: 10px; /* Adjust padding for button */
+    }
+}
